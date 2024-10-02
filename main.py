@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import os
+import webserver
 
 DISCORD_TOKEN = os.environ['discordkey']
 MENTIONED_USER_ID = '951184062331109426'
@@ -19,4 +20,5 @@ async def on_message(message):
       await message.channel.send(f"{message.author.mention}, pusi kur.")
   await bot.process_commands(message)
 
+webserver.keepalive()
 bot.run(DISCORD_TOKEN)
