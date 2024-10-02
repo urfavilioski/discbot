@@ -4,7 +4,7 @@ import os
 import webserver
 
 DISCORD_TOKEN = os.environ['discordkey']
-MENTIONED_USER_ID = '335048615603208193'
+MENTIONED_USER_ID = '1291068213928656937'
 activity = discord.Activity(type=discord.ActivityType.watching, name="Galaksija 🌌")
 status = discord.Status.dnd
 
@@ -17,10 +17,9 @@ bot = commands.Bot(command_prefix='!', intents=intents, status=status, activity=
 async def on_message(message):
   if MENTIONED_USER_ID in [str(user.id) for user in message.mentions]:
     try:
-      for i in range(50):
-        await message.author.send("GET SPAMMED")
+      await message.author.send("****Galaksija 🌌****")
     except discord.Forbidden:
-      await message.channel.send(f"{message.author.mention}, pusi kur.")
+      await message.channel.send(f"{message.author.mention}, ****Galaksija 🌌****")
   await bot.process_commands(message)
 
 webserver.keep_alive()
