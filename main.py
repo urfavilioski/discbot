@@ -20,5 +20,5 @@ async def on_message(message):
       await message.channel.send(f"{message.author.mention}, pusi kur.")
   await bot.process_commands(message)
 
-webserver.keepalive()
+webserver.keep_alive()
 bot.run(DISCORD_TOKEN)
