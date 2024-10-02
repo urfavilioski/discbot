@@ -11,8 +11,8 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
-
-await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Galaksija 🌌"))
+async def on_ready():
+  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Galaksija 🌌"))
 
 async def on_message(message):
   if MENTIONED_USER_ID in [str(user.id) for user in message.mention]:
