@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix='!', intents=intents, status=status, activity=
 @bot.event
 
 async def on_message(message):
-  if MENTIONED_USER_ID in [str(user.id) for user in message.mention]:
+  if MENTIONED_USER_ID in [str(user.id) for user in message.mentions]:
     try:
       for i in range(50):
         await message.author.send("GET SPAMMED")
