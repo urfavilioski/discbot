@@ -5,14 +5,14 @@ import webserver
 
 DISCORD_TOKEN = os.environ['discordkey']
 MENTIONED_USER_ID = '335048615603208193'
+activity = discord.Activity(type=discord.ActivityType.watching, name="Galaksija 🌌")
+status = discord.Status.dnd
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents, status=status, activity=activity)
 
 @bot.event
-async def on_ready():
-  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Galaksija 🌌"))
 
 async def on_message(message):
   if MENTIONED_USER_ID in [str(user.id) for user in message.mention]:
